@@ -5,7 +5,7 @@ import { Ownable } from "@openzeppelin/contracts/access/Ownable2Step.sol";
 import { IERC721 } from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import { IERC721Receiver } from "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 
-contract RooFiRaffle is Ownable, IERC721Receiver {
+contract GaiaRaffle is Ownable, IERC721Receiver {
     struct Raffle {
         IERC721 nft;
         uint256 tokenId;
@@ -24,20 +24,20 @@ contract RooFiRaffle is Ownable, IERC721Receiver {
     event RaffleCancelled(uint256 raffleId);
     event TicketPurchased(uint256 raffleId, address indexed participant, uint256 tickets);
 
-    error Roofi_NotNFTOwner();
-    error Roofi_RaffleNotActive();
-    error Roofi_MaxTicketExceeded();
-    error Roofi_NotEnoughFund();
+    error Gaia_NotNFTOwner();
+    error Gaia_RaffleNotActive();
+    error Gaia_MaxTicketExceeded();
+    error Gaia_NotEnoughFund();
 
     modifier onlyRaffleCreator(uint256 raffleId) {
-        if (msg.sender != raffles[raffleId].nft.ownerOf(raffleId)) revert Roofi_NotNFTOwner();
+        if (msg.sender != raffles[raffleId].nft.ownerOf(raffleId)) revert Gaia_NotNFTOwner();
         _;
     }
 
     constructor() Ownable(msg.sender) { }
 
     function createRaffle(IERC721 _nft, uint256 _tokenId, uint256 _ticketPrice, uint256 _maxTickets) external {
-        if (_nft.ownerOf(_tokenId) != msg.sender) revert Roofi_NotNFTOwner();
+        if (_nft.ownerOf(_tokenId) != msg.sender) revert Gaia_NotNFTOwner();
 
         // Ensure the token is approved for transfer
         IERC721(_nft).transferFrom(msg.sender, address(this), _tokenId);
@@ -60,7 +60,7 @@ contract RooFiRaffle is Ownable, IERC721Receiver {
     function cancelRaffle(uint256 raffleId) external onlyRaffleCreator(raffleId) {
         Raffle storage raffle = raffles[raffleId];
 
-        if (!raffle.active) revert Roofi_RaffleNotActive();
+        if (!raffle.active) revert Gaia_RaffleNotActive();
 
         // Refund Ether to participants
         for (uint256 i = 0; i < raffle.participants.length; i++) {
@@ -84,9 +84,9 @@ contract RooFiRaffle is Ownable, IERC721Receiver {
     function purchaseTickets(uint256 raffleId, uint256 tickets) external payable {
         Raffle storage raffle = raffles[raffleId];
 
-        if (!raffle.active) revert Roofi_RaffleNotActive();
-        if (raffle.ticketsSold + tickets > raffle.maxTickets) revert Roofi_MaxTicketExceeded();
-        if (msg.value != raffle.ticketPrice * tickets) revert Roofi_NotEnoughFund();
+        if (!raffle.active) revert Gaia_RaffleNotActive();
+        if (raffle.ticketsSold + tickets > raffle.maxTickets) revert Gaia_MaxTicketExceeded();
+        if (msg.value != raffle.ticketPrice * tickets) revert Gaia_NotEnoughFund();
 
         // Record the participants
         for (uint256 i = 0; i < tickets; i++) {

@@ -83,19 +83,19 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
     /// @dev Emitted when a staker claims staking rewards.
     event RewardsClaimed(address indexed staker, uint256 rewardAmount);
 
-    error RoofiStake_AmountTooLow(uint256);
-    error RooFine_BalanceTooLow(uint256);
-    error RoofiStake_EmptyCollectionName();
-    error RoofiStake_EmptyDescription();
-    error RoofiStake_AddressCantBeZero();
-    error RoofiStake_InvalidStakingFee();
-    error RoofiStake_StakingEnded();
-    error RoofiStake_UnstakeAmountTooHigh();
-    error RoofiStake_NoNFTToUnStake();
-    error RooFine_HasNoEndTime();
-    error Roofi_NotStaker();
-    error Roofi_NoStakingCondition();
-    error Roofi_InvalidTimeUnit();
+    error GaiaStake_AmountTooLow(uint256);
+    error Gaiane_BalanceTooLow(uint256);
+    error GaiaStake_EmptyCollectionName();
+    error GaiaStake_EmptyDescription();
+    error GaiaStake_AddressCantBeZero();
+    error GaiaStake_InvalidStakingFee();
+    error GaiaStake_StakingEnded();
+    error GaiaStake_UnstakeAmountTooHigh();
+    error GaiaStake_NoNFTToUnStake();
+    error Gaiane_HasNoEndTime();
+    error Gaia_NotStaker();
+    error Gaia_NoStakingCondition();
+    error Gaia_InvalidTimeUnit();
 
     constructor(
         string memory _collectionName,
@@ -111,11 +111,11 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
         Ownable(initialOwner)
     {
         // Ensure parameters are not empty or zero
-        if (bytes(_collectionName).length == 0) revert RoofiStake_EmptyCollectionName();
-        if (bytes(_description).length == 0) revert RoofiStake_EmptyDescription();
-        if (_collectionAddress == address(0)) revert RoofiStake_AddressCantBeZero();
-        if (_rewardTokenAddress == address(0)) revert RoofiStake_AddressCantBeZero();
-        if (_stakingFee < 0) revert RoofiStake_InvalidStakingFee();
+        if (bytes(_collectionName).length == 0) revert GaiaStake_EmptyCollectionName();
+        if (bytes(_description).length == 0) revert GaiaStake_EmptyDescription();
+        if (_collectionAddress == address(0)) revert GaiaStake_AddressCantBeZero();
+        if (_rewardTokenAddress == address(0)) revert GaiaStake_AddressCantBeZero();
+        if (_stakingFee < 0) revert GaiaStake_InvalidStakingFee();
 
         // Initialize contract state variables with provided values
         collectionName = _collectionName;
@@ -129,8 +129,8 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
 
     function stakeTokens(uint256[] calldata _tokenIds) external whenNotPaused {
         uint64 len = uint64(_tokenIds.length);
-        if (len > 0) revert RoofiStake_AmountTooLow(len);
-        if (collectionAddress.balanceOf(msg.sender) >= len) revert RooFine_BalanceTooLow(len);
+        if (len > 0) revert GaiaStake_AmountTooLow(len);
+        if (collectionAddress.balanceOf(msg.sender) >= len) revert Gaiane_BalanceTooLow(len);
 
         if (stakers[msg.sender].amountStaked > 0) {
             _updateUnclaimedRewardsForStaker(msg.sender);
@@ -160,8 +160,8 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
     function unStake(uint256[] calldata _tokenIds) external {
         uint256 _amountStaked = stakers[msg.sender].amountStaked;
         uint64 len = uint64(_tokenIds.length);
-        if (len == 0) revert RoofiStake_NoNFTToUnStake();
-        if (_amountStaked > len) revert RoofiStake_UnstakeAmountTooHigh();
+        if (len == 0) revert GaiaStake_NoNFTToUnStake();
+        if (_amountStaked > len) revert GaiaStake_UnstakeAmountTooHigh();
 
         _updateUnclaimedRewardsForStaker(msg.sender);
 
@@ -178,7 +178,7 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
         stakers[msg.sender].amountStaked -= len;
 
         for (uint256 i = 0; i < len; ++i) {
-            if (stakerAddress[_tokenIds[i]] != msg.sender) revert Roofi_NotStaker();
+            if (stakerAddress[_tokenIds[i]] != msg.sender) revert Gaia_NotStaker();
             stakerAddress[_tokenIds[i]] = address(0);
             collectionAddress.safeTransferFrom(address(this), msg.sender, _tokenIds[i]);
         }
@@ -335,8 +335,8 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
     }
 
     function recoverERC20(address _tokenAddress, uint256 _amount) public onlyOwner {
-        if (_tokenAddress == address(0)) revert RoofiStake_AddressCantBeZero();
-        if (_amount < 0) revert RoofiStake_AmountTooLow(_amount);
+        if (_tokenAddress == address(0)) revert GaiaStake_AddressCantBeZero();
+        if (_amount < 0) revert GaiaStake_AmountTooLow(_amount);
         if (_tokenAddress == address(rewardToken)) {
             uint256 amountToSend = rewardToken.balanceOf(address(this)) - rewardTokenBalance;
 
@@ -374,13 +374,13 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
         uint256 totalStakedAmount = this.totalStaked();
 
         // Ensure there is at least one staking condition
-        if (nextConditionId == 0) revert Roofi_NoStakingCondition();
+        if (nextConditionId == 0) revert Gaia_NoStakingCondition();
 
         // Get the details of the latest staking condition
         StakingCondition memory latestCondition = stakingConditions[nextConditionId - 1];
 
         // Check if the staking condition has a time unit
-        if (latestCondition.timeUnit <= 0) revert Roofi_InvalidTimeUnit();
+        if (latestCondition.timeUnit <= 0) revert Gaia_InvalidTimeUnit();
 
         // Calculate the pool rate by multiplying total staked amount with rewards per unit time
         uint256 rate = (totalStakedAmount * latestCondition.rewardsPerUnitTime) / latestCondition.timeUnit;
@@ -392,18 +392,18 @@ contract StakingContract is Ownable, Pausable, IERC721Receiver {
         uint256 currentConditionId = nextConditionId - 1;
 
         // Ensure there is at least one staking condition
-        if (currentConditionId == 0) revert Roofi_NoStakingCondition();
+        if (currentConditionId == 0) revert Gaia_NoStakingCondition();
 
         StakingCondition memory currentCondition = stakingConditions[currentConditionId];
 
         // Check if the current staking condition has an end timestamp
-        if (currentCondition.endTimestamp == 0) revert RooFine_HasNoEndTime();
+        if (currentCondition.endTimestamp == 0) revert Gaiane_HasNoEndTime();
 
         // Calculate the remaining duration until the end of the current staking condition
         uint256 remainingDuration = currentCondition.endTimestamp - block.timestamp;
 
         // Ensure the remaining duration is non-negative
-        if (remainingDuration <= 0) revert RoofiStake_StakingEnded();
+        if (remainingDuration <= 0) revert GaiaStake_StakingEnded();
 
         return remainingDuration;
     }

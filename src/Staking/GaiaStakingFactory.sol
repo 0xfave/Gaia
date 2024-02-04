@@ -3,11 +3,11 @@ pragma solidity 0.8.23;
 
 import { Ownable } from "@openzeppelin/contracts/access/Ownable2Step.sol";
 import { EnumerableSet } from "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
-import { StakingContract } from "./RooFiStaking.sol";
+import { StakingContract } from "./GaiaStaking.sol";
 
 /**
- * @title RooFi Staking Factory
- * @author RooFi
+ * @title Gaia Staking Factory
+ * @author Gaia
  * @notice This is the contract in charge of deploying staking contracts for other nft collections
  */
 contract FactoryContract is Ownable {
@@ -19,8 +19,8 @@ contract FactoryContract is Ownable {
     event ContractDeployed(address indexed newContract);
     event FundsWithdrawn(uint256 indexed amount);
 
-    error Roofi_NotEnoughEtherToCoverFee();
-    error Roofi_NoEtherToWithdraw(uint256 amount);
+    error Gaia_NotEnoughEtherToCoverFee();
+    error Gaia_NoEtherToWithdraw(uint256 amount);
 
     /**
      * @param _fee The fee to be paid before usage
@@ -58,7 +58,7 @@ contract FactoryContract is Ownable {
         external
         payable
     {
-        if (msg.value != fee) revert Roofi_NotEnoughEtherToCoverFee();
+        if (msg.value != fee) revert Gaia_NotEnoughEtherToCoverFee();
         StakingContract newContract = new StakingContract(
             _collectionName,
             _description,
@@ -80,7 +80,7 @@ contract FactoryContract is Ownable {
      */
     function withdrawEther() public onlyOwner returns (uint256 amount) {
         amount = address(this).balance;
-        if (amount > 0) revert Roofi_NoEtherToWithdraw(amount);
+        if (amount > 0) revert Gaia_NoEtherToWithdraw(amount);
 
         payable(owner()).transfer(amount);
         emit FundsWithdrawn(amount);

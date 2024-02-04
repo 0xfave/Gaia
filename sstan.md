@@ -125,35 +125,35 @@ File:Raffle.sol#L99
 
 
 
-File:RooFiStaking.sol#L221
+File:GaiaStaking.sol#L221
 ```solidity
 220:        require(rewardToken.transferFrom(msg.sender, address(this), _amount), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStaking.sol#L316
+File:GaiaStaking.sol#L316
 ```solidity
 315:        require(rewardToken.transfer(msg.sender, rewards), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStaking.sol#L343
+File:GaiaStaking.sol#L343
 ```solidity
 342:            require(IERC20(_tokenAddress).transfer(owner(), amountToSend), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStaking.sol#L352
+File:GaiaStaking.sol#L352
 ```solidity
 351:            require(IERC20(_tokenAddress).transfer(owner(), _amount), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L85
+File:GaiaStakingFactory.sol#L85
 ```solidity
 84:        payable(owner()).transfer(amount);
 ``` 
@@ -175,7 +175,7 @@ File:RooFiStakingFactory.sol#L85
 
  --- 
 
-File:RooFiStaking.sol#L25
+File:GaiaStaking.sol#L25
 ```solidity
 24:    string public collectionName;
 ``` 
@@ -193,7 +193,7 @@ File:RooFiStaking.sol#L25
 
  --- 
 
-File:RooFiStakingFactory.sol#L96
+File:GaiaStakingFactory.sol#L96
 ```solidity
 95:        for (uint256 i = 0; i < count; i++) {
 96:            contracts[i] = deployedContracts.at(i);
@@ -203,7 +203,7 @@ File:RooFiStakingFactory.sol#L96
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -222,7 +222,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -241,7 +241,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -260,7 +260,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -279,7 +279,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -298,7 +298,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -317,7 +317,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -336,7 +336,7 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 143:            isStaking = 2;
@@ -355,10 +355,10 @@ File:RooFiStaking.sol#L143
 
 
 
-File:RooFiStaking.sol#L180
+File:GaiaStaking.sol#L180
 ```solidity
 179:        for (uint256 i = 0; i < len; ++i) {
-180:            if (stakerAddress[_tokenIds[i]] != msg.sender) revert Roofi_NotStaker();
+180:            if (stakerAddress[_tokenIds[i]] != msg.sender) revert Gaia_NotStaker();
 181:            stakerAddress[_tokenIds[i]] = address(0);
 182:            collectionAddress.safeTransferFrom(address(this), msg.sender, _tokenIds[i]);
 183:        }
@@ -381,35 +381,35 @@ File:RooFiStaking.sol#L180
 
  --- 
 
-File:RooFiStaking.sol#L26
+File:GaiaStaking.sol#L26
 ```solidity
 25:    string public description;
 ``` 
 
 
 
-File:RooFiStaking.sol#L25
+File:GaiaStaking.sol#L25
 ```solidity
 24:    string public collectionName;
 ``` 
 
 
 
-File:RooFiStaking.sol#L27
+File:GaiaStaking.sol#L27
 ```solidity
 26:    IERC721 public collectionAddress;
 ``` 
 
 
 
-File:RooFiStaking.sol#L28
+File:GaiaStaking.sol#L28
 ```solidity
 27:    address public rewardTokenAddress;
 ``` 
 
 
 
-File:RooFiStaking.sol#L29
+File:GaiaStaking.sol#L29
 ```solidity
 28:    uint256 public stakingFee;
 ``` 
@@ -427,49 +427,49 @@ File:RooFiStaking.sol#L29
 
  --- 
 
-File:RooFiStakingFactory.sol#L96
+File:GaiaStakingFactory.sol#L96
 ```solidity
 95:        for (uint256 i = 0; i < count; i++) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L288
+File:GaiaStaking.sol#L288
 ```solidity
 287:        for (uint256 i = 0; i < indexedTokenCount; i++) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L365
+File:GaiaStaking.sol#L365
 ```solidity
 364:        for (uint256 i = 0; i < stakersArray.length; i++) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L180
+File:GaiaStaking.sol#L180
 ```solidity
 179:        for (uint256 i = 0; i < len; ++i) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L143
+File:GaiaStaking.sol#L143
 ```solidity
 142:        for (uint256 i = 0; i < len; ++i) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L281
+File:GaiaStaking.sol#L281
 ```solidity
 280:        for (uint256 i = 0; i < indexedTokenCount; i++) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L170
+File:GaiaStaking.sol#L170
 ```solidity
 169:            for (uint256 i = 0; i < _stakersArray.length; ++i) {
 ``` 
@@ -508,7 +508,7 @@ File:Raffle.sol#L56
 
  --- 
 
-File:RooFiStakingFactory.sol#L97
+File:GaiaStakingFactory.sol#L97
 ```solidity
 96:            contracts[i] = deployedContracts.at(i);
 ``` 
@@ -529,231 +529,231 @@ File:Raffle.sol#L56
 
 
 
-File:RooFiStaking.sol#L139
+File:GaiaStaking.sol#L139
 ```solidity
 138:            stakers[msg.sender].timeOfLastUpdate = uint128(block.timestamp);
 ``` 
 
 
 
-File:RooFiStaking.sol#L140
+File:GaiaStaking.sol#L140
 ```solidity
 139:            stakers[msg.sender].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L145
+File:GaiaStaking.sol#L145
 ```solidity
 144:            collectionAddress.safeTransferFrom(msg.sender, address(this), _tokenIds[i]);
 ``` 
 
 
 
-File:RooFiStaking.sol#L146
+File:GaiaStaking.sol#L146
 ```solidity
 145:            isStaking = 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L151
+File:GaiaStaking.sol#L151
 ```solidity
 150:                isIndexed[_tokenIds[i]] = true;
 ``` 
 
 
 
-File:RooFiStaking.sol#L155
+File:GaiaStaking.sol#L155
 ```solidity
 154:        stakers[msg.sender].amountStaked += len;
 ``` 
 
 
 
-File:RooFiStaking.sol#L139
+File:GaiaStaking.sol#L139
 ```solidity
 138:            stakers[msg.sender].timeOfLastUpdate = uint128(block.timestamp);
 ``` 
 
 
 
-File:RooFiStaking.sol#L140
+File:GaiaStaking.sol#L140
 ```solidity
 139:            stakers[msg.sender].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L145
+File:GaiaStaking.sol#L145
 ```solidity
 144:            collectionAddress.safeTransferFrom(msg.sender, address(this), _tokenIds[i]);
 ``` 
 
 
 
-File:RooFiStaking.sol#L146
+File:GaiaStaking.sol#L146
 ```solidity
 145:            isStaking = 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L151
+File:GaiaStaking.sol#L151
 ```solidity
 150:                isIndexed[_tokenIds[i]] = true;
 ``` 
 
 
 
-File:RooFiStaking.sol#L155
+File:GaiaStaking.sol#L155
 ```solidity
 154:        stakers[msg.sender].amountStaked += len;
 ``` 
 
 
 
-File:RooFiStaking.sol#L172
+File:GaiaStaking.sol#L172
 ```solidity
 171:                    stakersArray[i] = _stakersArray[_stakersArray.length - 1];
 ``` 
 
 
 
-File:RooFiStaking.sol#L173
+File:GaiaStaking.sol#L173
 ```solidity
 172:                    stakersArray.pop();
 ``` 
 
 
 
-File:RooFiStaking.sol#L178
+File:GaiaStaking.sol#L178
 ```solidity
 177:        stakers[msg.sender].amountStaked -= len;
 ``` 
 
 
 
-File:RooFiStaking.sol#L182
+File:GaiaStaking.sol#L182
 ```solidity
 181:            stakerAddress[_tokenIds[i]] = address(0);
 ``` 
 
 
 
-File:RooFiStaking.sol#L233
+File:GaiaStaking.sol#L233
 ```solidity
 232:        stakers[_staker].timeOfLastUpdate = uint128(block.timestamp);
 ``` 
 
 
 
-File:RooFiStaking.sol#L234
+File:GaiaStaking.sol#L234
 ```solidity
 233:        stakers[_staker].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L233
+File:GaiaStaking.sol#L233
 ```solidity
 232:        stakers[_staker].timeOfLastUpdate = uint128(block.timestamp);
 ``` 
 
 
 
-File:RooFiStaking.sol#L234
+File:GaiaStaking.sol#L234
 ```solidity
 233:        stakers[_staker].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L261
+File:GaiaStaking.sol#L261
 ```solidity
 260:        nextConditionId += 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L271
+File:GaiaStaking.sol#L271
 ```solidity
 270:            stakingConditions[conditionId - 1].endTimestamp = block.timestamp;
 ``` 
 
 
 
-File:RooFiStaking.sol#L301
+File:GaiaStaking.sol#L301
 ```solidity
 300:            _rewards = stakers[_user].unclaimedRewards;
 ``` 
 
 
 
-File:RooFiStaking.sol#L303
+File:GaiaStaking.sol#L303
 ```solidity
 302:            _rewards = stakers[_user].unclaimedRewards + _calculateRewards(_user);
 ``` 
 
 
 
-File:RooFiStaking.sol#L301
+File:GaiaStaking.sol#L301
 ```solidity
 300:            _rewards = stakers[_user].unclaimedRewards;
 ``` 
 
 
 
-File:RooFiStaking.sol#L303
+File:GaiaStaking.sol#L303
 ```solidity
 302:            _rewards = stakers[_user].unclaimedRewards + _calculateRewards(_user);
 ``` 
 
 
 
-File:RooFiStaking.sol#L312
+File:GaiaStaking.sol#L312
 ```solidity
 311:        stakers[msg.sender].timeOfLastUpdate = uint128(block.timestamp);
 ``` 
 
 
 
-File:RooFiStaking.sol#L313
+File:GaiaStaking.sol#L313
 ```solidity
 312:        stakers[msg.sender].unclaimedRewards = 0;
 ``` 
 
 
 
-File:RooFiStaking.sol#L314
+File:GaiaStaking.sol#L314
 ```solidity
 313:        stakers[msg.sender].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L341
+File:GaiaStaking.sol#L341
 ```solidity
 340:            uint256 amountToSend = rewardToken.balanceOf(address(this)) - rewardTokenBalance;
 ``` 
 
 
 
-File:RooFiStaking.sol#L341
+File:GaiaStaking.sol#L341
 ```solidity
 340:            uint256 amountToSend = rewardToken.balanceOf(address(this)) - rewardTokenBalance;
 ``` 
 
 
 
-File:RooFiStaking.sol#L366
+File:GaiaStaking.sol#L366
 ```solidity
 365:            totalStakedAmount += stakers[stakersArray[i]].amountStaked;
 ``` 
 
 
 
-File:RooFiStaking.sol#L380
+File:GaiaStaking.sol#L380
 ```solidity
 379:        StakingCondition memory latestCondition = stakingConditions[nextConditionId - 1];
 ``` 
@@ -771,23 +771,23 @@ File:RooFiStaking.sol#L380
 
  --- 
 
-File:RooFiStaking.sol#L116
+File:GaiaStaking.sol#L116
 ```solidity
-115:        if (_collectionAddress == address(0)) revert RoofiStake_AddressCantBeZero();
+115:        if (_collectionAddress == address(0)) revert GaiaStake_AddressCantBeZero();
 ``` 
 
 
 
-File:RooFiStaking.sol#L117
+File:GaiaStaking.sol#L117
 ```solidity
-116:        if (_rewardTokenAddress == address(0)) revert RoofiStake_AddressCantBeZero();
+116:        if (_rewardTokenAddress == address(0)) revert GaiaStake_AddressCantBeZero();
 ``` 
 
 
 
-File:RooFiStaking.sol#L338
+File:GaiaStaking.sol#L338
 ```solidity
-337:        if (_tokenAddress == address(0)) revert RoofiStake_AddressCantBeZero();
+337:        if (_tokenAddress == address(0)) revert GaiaStake_AddressCantBeZero();
 ``` 
 
 
@@ -804,30 +804,30 @@ File:RooFiStaking.sol#L338
 
  --- 
 
-File:RooFiStaking.sol#L133
+File:GaiaStaking.sol#L133
 ```solidity
-132:        if (collectionAddress.balanceOf(msg.sender) >= len) revert RooFine_BalanceTooLow(len);
+132:        if (collectionAddress.balanceOf(msg.sender) >= len) revert Gaiane_BalanceTooLow(len);
 ``` 
 
 
 
-File:RooFiStaking.sol#L349
+File:GaiaStaking.sol#L349
 ```solidity
 348:            require(_amount <= tokenBalance, "Amount exceeds token balance");
 ``` 
 
 
 
-File:RooFiStaking.sol#L383
+File:GaiaStaking.sol#L383
 ```solidity
-382:        if (latestCondition.timeUnit <= 0) revert Roofi_InvalidTimeUnit();
+382:        if (latestCondition.timeUnit <= 0) revert Gaia_InvalidTimeUnit();
 ``` 
 
 
 
-File:RooFiStaking.sol#L406
+File:GaiaStaking.sol#L406
 ```solidity
-405:        if (remainingDuration <= 0) revert RoofiStake_StakingEnded();
+405:        if (remainingDuration <= 0) revert GaiaStake_StakingEnded();
 ``` 
 
 
@@ -843,14 +843,14 @@ File:RooFiStaking.sol#L406
 
  --- 
 
-File:RooFiStakingFactory.sol#L49
+File:GaiaStakingFactory.sol#L49
 ```solidity
 48:        string memory _collectionName,
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L50
+File:GaiaStakingFactory.sol#L50
 ```solidity
 49:        string memory _description,
 ``` 
@@ -868,84 +868,84 @@ File:RooFiStakingFactory.sol#L50
 
  --- 
 
-File:RooFiStaking.sol#L191
+File:GaiaStaking.sol#L191
 ```solidity
 190:        require(_rewardsPerUnitTime != condition.rewardsPerUnitTime, "Reward unchanged.");
 ``` 
 
 
 
-File:RooFiStaking.sol#L200
+File:GaiaStaking.sol#L200
 ```solidity
 199:        require(_timeUnit != condition.timeUnit, "Time-unit unchanged.");
 ``` 
 
 
 
-File:RooFiStaking.sol#L210
+File:GaiaStaking.sol#L210
 ```solidity
 209:        require(_endTimestamp != condition.endTimestamp, "Time-unit unchanged.");
 ``` 
 
 
 
-File:RooFiStaking.sol#L218
+File:GaiaStaking.sol#L218
 ```solidity
 217:        require(_amount > 0, "Amount must be greater than 0");
 ``` 
 
 
 
-File:RooFiStaking.sol#L221
+File:GaiaStaking.sol#L221
 ```solidity
 220:        require(rewardToken.transferFrom(msg.sender, address(this), _amount), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStaking.sol#L259
+File:GaiaStaking.sol#L259
 ```solidity
 258:        require(_timeUnit != 0, "time-unit can't be 0");
 ``` 
 
 
 
-File:RooFiStaking.sol#L310
+File:GaiaStaking.sol#L310
 ```solidity
 309:        require(rewards != 0, "No rewards");
 ``` 
 
 
 
-File:RooFiStaking.sol#L316
+File:GaiaStaking.sol#L316
 ```solidity
 315:        require(rewardToken.transfer(msg.sender, rewards), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStaking.sol#L332
+File:GaiaStaking.sol#L332
 ```solidity
 331:        require(isStaking == 2, "Direct transfer");
 ``` 
 
 
 
-File:RooFiStaking.sol#L343
+File:GaiaStaking.sol#L343
 ```solidity
 342:            require(IERC20(_tokenAddress).transfer(owner(), amountToSend), "Token transfer failed");
 ``` 
 
 
 
-File:RooFiStaking.sol#L349
+File:GaiaStaking.sol#L349
 ```solidity
 348:            require(_amount <= tokenBalance, "Amount exceeds token balance");
 ``` 
 
 
 
-File:RooFiStaking.sol#L352
+File:GaiaStaking.sol#L352
 ```solidity
 351:            require(IERC20(_tokenAddress).transfer(owner(), _amount), "Token transfer failed");
 ``` 
@@ -963,84 +963,84 @@ File:RooFiStaking.sol#L352
 
  --- 
 
-File:RooFiStaking.sol#L140
+File:GaiaStaking.sol#L140
 ```solidity
 139:            stakers[msg.sender].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L172
+File:GaiaStaking.sol#L172
 ```solidity
 171:                    stakersArray[i] = _stakersArray[_stakersArray.length - 1];
 ``` 
 
 
 
-File:RooFiStaking.sol#L190
+File:GaiaStaking.sol#L190
 ```solidity
 189:        StakingCondition memory condition = stakingConditions[nextConditionId - 1];
 ``` 
 
 
 
-File:RooFiStaking.sol#L199
+File:GaiaStaking.sol#L199
 ```solidity
 198:        StakingCondition memory condition = stakingConditions[nextConditionId - 1];
 ``` 
 
 
 
-File:RooFiStaking.sol#L208
+File:GaiaStaking.sol#L208
 ```solidity
 207:        StakingCondition memory condition = stakingConditions[nextConditionId - 1];
 ``` 
 
 
 
-File:RooFiStaking.sol#L209
+File:GaiaStaking.sol#L209
 ```solidity
 208:        _endTimestamp = block.timestamp + _endTimestamp;
 ``` 
 
 
 
-File:RooFiStaking.sol#L234
+File:GaiaStaking.sol#L234
 ```solidity
 233:        stakers[_staker].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L249
+File:GaiaStaking.sol#L249
 ```solidity
 248:            uint256 rewardsProduct = (endTime - startTime) * staker.amountStaked * condition.rewardsPerUnitTime;
 ``` 
 
 
 
-File:RooFiStaking.sol#L249
+File:GaiaStaking.sol#L249
 ```solidity
 248:            uint256 rewardsProduct = (endTime - startTime) * staker.amountStaked * condition.rewardsPerUnitTime;
 ``` 
 
 
 
-File:RooFiStaking.sol#L249
+File:GaiaStaking.sol#L249
 ```solidity
 248:            uint256 rewardsProduct = (endTime - startTime) * staker.amountStaked * condition.rewardsPerUnitTime;
 ``` 
 
 
 
-File:RooFiStaking.sol#L250
+File:GaiaStaking.sol#L250
 ```solidity
 249:            uint256 rewardsPerTimeUnit = rewardsProduct / condition.timeUnit;
 ``` 
 
 
 
-File:RooFiStaking.sol#L267
+File:GaiaStaking.sol#L267
 ```solidity
 266:            endTimestamp: block.timestamp + _endTime
 267:        });
@@ -1048,70 +1048,70 @@ File:RooFiStaking.sol#L267
 
 
 
-File:RooFiStaking.sol#L271
+File:GaiaStaking.sol#L271
 ```solidity
 270:            stakingConditions[conditionId - 1].endTimestamp = block.timestamp;
 ``` 
 
 
 
-File:RooFiStaking.sol#L303
+File:GaiaStaking.sol#L303
 ```solidity
 302:            _rewards = stakers[_user].unclaimedRewards + _calculateRewards(_user);
 ``` 
 
 
 
-File:RooFiStaking.sol#L308
+File:GaiaStaking.sol#L308
 ```solidity
 307:        uint256 rewards = stakers[msg.sender].unclaimedRewards + _calculateRewards(msg.sender);
 ``` 
 
 
 
-File:RooFiStaking.sol#L314
+File:GaiaStaking.sol#L314
 ```solidity
 313:        stakers[msg.sender].conditionIdOflastUpdate = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L341
+File:GaiaStaking.sol#L341
 ```solidity
 340:            uint256 amountToSend = rewardToken.balanceOf(address(this)) - rewardTokenBalance;
 ``` 
 
 
 
-File:RooFiStaking.sol#L380
+File:GaiaStaking.sol#L380
 ```solidity
 379:        StakingCondition memory latestCondition = stakingConditions[nextConditionId - 1];
 ``` 
 
 
 
-File:RooFiStaking.sol#L386
+File:GaiaStaking.sol#L386
 ```solidity
 385:        uint256 rate = (totalStakedAmount * latestCondition.rewardsPerUnitTime) / latestCondition.timeUnit;
 ``` 
 
 
 
-File:RooFiStaking.sol#L386
+File:GaiaStaking.sol#L386
 ```solidity
 385:        uint256 rate = (totalStakedAmount * latestCondition.rewardsPerUnitTime) / latestCondition.timeUnit;
 ``` 
 
 
 
-File:RooFiStaking.sol#L392
+File:GaiaStaking.sol#L392
 ```solidity
 391:        uint256 currentConditionId = nextConditionId - 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L403
+File:GaiaStaking.sol#L403
 ```solidity
 402:        uint256 remainingDuration = currentCondition.endTimestamp - block.timestamp;
 ``` 
@@ -1120,14 +1120,14 @@ File:RooFiStaking.sol#L403
 
 File:Raffle.sol#L83
 ```solidity
-82:        if (raffle.ticketsSold + tickets > raffle.maxTickets) revert Roofi_MaxTicketExceeded();
+82:        if (raffle.ticketsSold + tickets > raffle.maxTickets) revert Gaia_MaxTicketExceeded();
 ``` 
 
 
 
 File:Raffle.sol#L84
 ```solidity
-83:        if (msg.value != raffle.ticketPrice * tickets) revert Roofi_NotEnoughFund();
+83:        if (msg.value != raffle.ticketPrice * tickets) revert Gaia_NotEnoughFund();
 ``` 
 
 
@@ -1143,56 +1143,56 @@ File:Raffle.sol#L84
 
  --- 
 
-File:RooFiStakingFactory.sol#L29
+File:GaiaStakingFactory.sol#L29
 ```solidity
 28:        fee = _fee;
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L37
+File:GaiaStakingFactory.sol#L37
 ```solidity
 36:        fee = _newFee;
 ``` 
 
 
 
-File:RooFiStaking.sol#L121
+File:GaiaStaking.sol#L121
 ```solidity
 120:        collectionName = _collectionName;
 ``` 
 
 
 
-File:RooFiStaking.sol#L122
+File:GaiaStaking.sol#L122
 ```solidity
 121:        description = _description;
 ``` 
 
 
 
-File:RooFiStaking.sol#L124
+File:GaiaStaking.sol#L124
 ```solidity
 123:        rewardTokenAddress = _rewardTokenAddress;
 ``` 
 
 
 
-File:RooFiStaking.sol#L125
+File:GaiaStaking.sol#L125
 ```solidity
 124:        stakingFee = _stakingFee;
 ``` 
 
 
 
-File:RooFiStaking.sol#L144
+File:GaiaStaking.sol#L144
 ```solidity
 143:            isStaking = 2;
 ``` 
 
 
 
-File:RooFiStaking.sol#L146
+File:GaiaStaking.sol#L146
 ```solidity
 145:            isStaking = 1;
 ``` 
@@ -1231,56 +1231,56 @@ File:Raffle.sol#L24
 
 
 
-File:RooFiStaking.sol#L67
+File:GaiaStaking.sol#L67
 ```solidity
 66:    event UpdatedRewardsPerUnitTime(uint256 oldRewardsPerUnitTime, uint256 newRewardsPerUnitTime);
 ``` 
 
 
 
-File:RooFiStaking.sol#L68
+File:GaiaStaking.sol#L68
 ```solidity
 67:    event NFTStaked(uint256);
 ``` 
 
 
 
-File:RooFiStaking.sol#L70
+File:GaiaStaking.sol#L70
 ```solidity
 69:    event UpdatedTimeUnit(uint256 oldTimeUnit, uint256 newTimeUnit);
 ``` 
 
 
 
-File:RooFiStaking.sol#L72
+File:GaiaStaking.sol#L72
 ```solidity
 71:    event UpdatedEndTimestamp(uint256 oldEndTimestamp, uint256 newEndTimeStamp);
 ``` 
 
 
 
-File:RooFiStaking.sol#L75
+File:GaiaStaking.sol#L75
 ```solidity
 74:    event RewardTokensDeposited(uint256 amountDeposited);
 ``` 
 
 
 
-File:RooFiStaking.sol#L78
+File:GaiaStaking.sol#L78
 ```solidity
 77:    event ERC20Recovered(address indexed tokenAddress, address indexed recipient, uint256 amount);
 ``` 
 
 
 
-File:RooFiStaking.sol#L81
+File:GaiaStaking.sol#L81
 ```solidity
 80:    event TokensWithdrawn(address indexed staker, uint256[] indexed tokenIds);
 ``` 
 
 
 
-File:RooFiStaking.sol#L84
+File:GaiaStaking.sol#L84
 ```solidity
 83:    event RewardsClaimed(address indexed staker, uint256 rewardAmount);
 ``` 
@@ -1319,84 +1319,84 @@ File:Raffle.sol#L98
 
 
 
-File:RooFiStakingFactory.sol#L36
+File:GaiaStakingFactory.sol#L36
 ```solidity
 35:    function updateFee(uint256 _newFee) external onlyOwner {
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L81
+File:GaiaStakingFactory.sol#L81
 ```solidity
 80:    function withdrawEther() public onlyOwner returns (uint256 amount) {
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L92
+File:GaiaStakingFactory.sol#L92
 ```solidity
 91:    function getDeployedStakingContracts() external view returns (address[] memory) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L130
+File:GaiaStaking.sol#L130
 ```solidity
 129:    function stakeTokens(uint256[] calldata _tokenIds) external whenNotPaused {
 ``` 
 
 
 
-File:RooFiStaking.sol#L160
+File:GaiaStaking.sol#L160
 ```solidity
 159:    function unStake(uint256[] calldata _tokenIds) external {
 ``` 
 
 
 
-File:RooFiStaking.sol#L189
+File:GaiaStaking.sol#L189
 ```solidity
 188:    function setRewardsPerUnitTime(uint256 _rewardsPerUnitTime) external onlyOwner {
 ``` 
 
 
 
-File:RooFiStaking.sol#L198
+File:GaiaStaking.sol#L198
 ```solidity
 197:    function setTimeUnit(uint256 _timeUnit) external onlyOwner {
 ``` 
 
 
 
-File:RooFiStaking.sol#L207
+File:GaiaStaking.sol#L207
 ```solidity
 206:    function setEndTimeStamp(uint256 _endTimestamp) external onlyOwner {
 ``` 
 
 
 
-File:RooFiStaking.sol#L217
+File:GaiaStaking.sol#L217
 ```solidity
 216:    function depositRewardTokens(uint256 _amount) external onlyOwner {
 ``` 
 
 
 
-File:RooFiStaking.sol#L275
+File:GaiaStaking.sol#L275
 ```solidity
 274:    function getStakeInfo(address _staker) external view returns (uint256[] memory _tokensStaked, uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L307
+File:GaiaStaking.sol#L307
 ```solidity
 306:    function claimReward() external {
 ``` 
 
 
 
-File:RooFiStaking.sol#L321
+File:GaiaStaking.sol#L321
 ```solidity
 320:    function onERC721Received(
 321:        address operator,
@@ -1413,35 +1413,35 @@ File:RooFiStaking.sol#L321
 
 
 
-File:RooFiStaking.sol#L337
+File:GaiaStaking.sol#L337
 ```solidity
 336:    function recoverERC20(address _tokenAddress, uint256 _amount) public onlyOwner {
 ``` 
 
 
 
-File:RooFiStaking.sol#L358
+File:GaiaStaking.sol#L358
 ```solidity
 357:    function getStakersCount() external view returns (uint256) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L362
+File:GaiaStaking.sol#L362
 ```solidity
 361:    function totalStaked() external view returns (uint256) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L372
+File:GaiaStaking.sol#L372
 ```solidity
 371:    function poolRate() external view returns (uint256) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L391
+File:GaiaStaking.sol#L391
 ```solidity
 390:    function rewardDuration() external view returns (uint256) {
 ``` 
@@ -1473,7 +1473,7 @@ File:Raffle.sol#L99
 
 
 
-File:RooFiStakingFactory.sol#L82
+File:GaiaStakingFactory.sol#L82
 ```solidity
 81:        amount = address(this).balance;
 ``` 
@@ -1491,14 +1491,14 @@ File:RooFiStakingFactory.sol#L82
 
  --- 
 
-File:RooFiStaking.sol#L170
+File:GaiaStaking.sol#L170
 ```solidity
 169:            for (uint256 i = 0; i < _stakersArray.length; ++i) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L365
+File:GaiaStaking.sol#L365
 ```solidity
 364:        for (uint256 i = 0; i < stakersArray.length; i++) {
 ``` 
@@ -1525,21 +1525,21 @@ File:Raffle.sol#L65
 
  --- 
 
-File:RooFiStaking.sol#L43
+File:GaiaStaking.sol#L43
 ```solidity
 42:    uint256 private rewardTokenBalance;
 ``` 
 
 
 
-File:RooFiStaking.sol#L49
+File:GaiaStaking.sol#L49
 ```solidity
 48:    uint8 internal isStaking = 1;
 ``` 
 
 
 
-File:RooFiStaking.sol#L40
+File:GaiaStaking.sol#L40
 ```solidity
 39:    uint64 private nextConditionId;
 ``` 
@@ -1555,7 +1555,7 @@ File:RooFiStaking.sol#L40
 
  --- 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1574,7 +1574,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1593,7 +1593,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1612,7 +1612,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1631,7 +1631,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1650,7 +1650,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1669,7 +1669,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1688,7 +1688,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1707,7 +1707,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStaking.sol#L100
+File:GaiaStaking.sol#L100
 ```solidity
 99:    constructor(
 100:        string memory _collectionName,
@@ -1726,7 +1726,7 @@ File:RooFiStaking.sol#L100
 
 
 
-File:RooFiStakingFactory.sol#L28
+File:GaiaStakingFactory.sol#L28
 ```solidity
 27:    constructor(uint256 _fee) Ownable(msg.sender) {
 ``` 
@@ -1744,112 +1744,112 @@ File:RooFiStakingFactory.sol#L28
 
 File:Raffle.sol#L26
 ```solidity
-25:    error Roofi_NotNFTOwner();
+25:    error Gaia_NotNFTOwner();
 ``` 
 
 
 
 File:Raffle.sol#L27
 ```solidity
-26:    error Roofi_RaffleNotActive();
+26:    error Gaia_RaffleNotActive();
 ``` 
 
 
 
 File:Raffle.sol#L28
 ```solidity
-27:    error Roofi_MaxTicketExceeded();
+27:    error Gaia_MaxTicketExceeded();
 ``` 
 
 
 
 File:Raffle.sol#L29
 ```solidity
-28:    error Roofi_NotEnoughFund();
+28:    error Gaia_NotEnoughFund();
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L22
+File:GaiaStakingFactory.sol#L22
 ```solidity
-21:    error Roofi_NotEnoughEtherToCoverFee();
+21:    error Gaia_NotEnoughEtherToCoverFee();
 ``` 
 
 
 
-File:RooFiStaking.sol#L88
+File:GaiaStaking.sol#L88
 ```solidity
-87:    error RoofiStake_EmptyCollectionName();
+87:    error GaiaStake_EmptyCollectionName();
 ``` 
 
 
 
-File:RooFiStaking.sol#L89
+File:GaiaStaking.sol#L89
 ```solidity
-88:    error RoofiStake_EmptyDescription();
+88:    error GaiaStake_EmptyDescription();
 ``` 
 
 
 
-File:RooFiStaking.sol#L90
+File:GaiaStaking.sol#L90
 ```solidity
-89:    error RoofiStake_AddressCantBeZero();
+89:    error GaiaStake_AddressCantBeZero();
 ``` 
 
 
 
-File:RooFiStaking.sol#L91
+File:GaiaStaking.sol#L91
 ```solidity
-90:    error RoofiStake_InvalidStakingFee();
+90:    error GaiaStake_InvalidStakingFee();
 ``` 
 
 
 
-File:RooFiStaking.sol#L92
+File:GaiaStaking.sol#L92
 ```solidity
-91:    error RoofiStake_StakingEnded();
+91:    error GaiaStake_StakingEnded();
 ``` 
 
 
 
-File:RooFiStaking.sol#L93
+File:GaiaStaking.sol#L93
 ```solidity
-92:    error RoofiStake_UnstakeAmountTooHigh();
+92:    error GaiaStake_UnstakeAmountTooHigh();
 ``` 
 
 
 
-File:RooFiStaking.sol#L94
+File:GaiaStaking.sol#L94
 ```solidity
-93:    error RoofiStake_NoNFTToUnStake();
+93:    error GaiaStake_NoNFTToUnStake();
 ``` 
 
 
 
-File:RooFiStaking.sol#L95
+File:GaiaStaking.sol#L95
 ```solidity
-94:    error RooFine_HasNoEndTime();
+94:    error Gaiane_HasNoEndTime();
 ``` 
 
 
 
-File:RooFiStaking.sol#L96
+File:GaiaStaking.sol#L96
 ```solidity
-95:    error Roofi_NotStaker();
+95:    error Gaia_NotStaker();
 ``` 
 
 
 
-File:RooFiStaking.sol#L97
+File:GaiaStaking.sol#L97
 ```solidity
-96:    error Roofi_NoStakingCondition();
+96:    error Gaia_NoStakingCondition();
 ``` 
 
 
 
-File:RooFiStaking.sol#L98
+File:GaiaStaking.sol#L98
 ```solidity
-97:    error Roofi_InvalidTimeUnit();
+97:    error Gaia_InvalidTimeUnit();
 ``` 
 
 
@@ -1879,14 +1879,14 @@ File:Foo.sol#L5
 
  --- 
 
-File:RooFiStaking.sol#L337
+File:GaiaStaking.sol#L337
 ```solidity
 336:    function recoverERC20(address _tokenAddress, uint256 _amount) public onlyOwner {
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L81
+File:GaiaStakingFactory.sol#L81
 ```solidity
 80:    function withdrawEther() public onlyOwner returns (uint256 amount) {
 ``` 
@@ -1916,105 +1916,105 @@ File:Raffle.sol#L79
 
 
 
-File:RooFiStakingFactory.sol#L28
+File:GaiaStakingFactory.sol#L28
 ```solidity
 27:    constructor(uint256 _fee) Ownable(msg.sender) {
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L50
+File:GaiaStakingFactory.sol#L50
 ```solidity
 49:        string memory _description,
 ``` 
 
 
 
-File:RooFiStakingFactory.sol#L81
+File:GaiaStakingFactory.sol#L81
 ```solidity
 80:    function withdrawEther() public onlyOwner returns (uint256 amount) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L102
+File:GaiaStaking.sol#L102
 ```solidity
 101:        string memory _description,
 ``` 
 
 
 
-File:RooFiStaking.sol#L217
+File:GaiaStaking.sol#L217
 ```solidity
 216:    function depositRewardTokens(uint256 _amount) external onlyOwner {
 ``` 
 
 
 
-File:RooFiStaking.sol#L230
+File:GaiaStaking.sol#L230
 ```solidity
 229:    function _updateUnclaimedRewardsForStaker(address _staker) internal virtual {
 ``` 
 
 
 
-File:RooFiStaking.sol#L237
+File:GaiaStaking.sol#L237
 ```solidity
 236:    function _calculateRewards(address _staker) internal view returns (uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L237
+File:GaiaStaking.sol#L237
 ```solidity
 236:    function _calculateRewards(address _staker) internal view returns (uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L275
+File:GaiaStaking.sol#L275
 ```solidity
 274:    function getStakeInfo(address _staker) external view returns (uint256[] memory _tokensStaked, uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L275
+File:GaiaStaking.sol#L275
 ```solidity
 274:    function getStakeInfo(address _staker) external view returns (uint256[] memory _tokensStaked, uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L299
+File:GaiaStaking.sol#L299
 ```solidity
 298:    function _availableRewards(address _user) internal view virtual returns (uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L299
+File:GaiaStaking.sol#L299
 ```solidity
 298:    function _availableRewards(address _user) internal view virtual returns (uint256 _rewards) {
 ``` 
 
 
 
-File:RooFiStaking.sol#L322
+File:GaiaStaking.sol#L322
 ```solidity
 321:        address operator,
 ``` 
 
 
 
-File:RooFiStaking.sol#L323
+File:GaiaStaking.sol#L323
 ```solidity
 322:        address from,
 ``` 
 
 
 
-File:RooFiStaking.sol#L325
+File:GaiaStaking.sol#L325
 ```solidity
 324:        bytes calldata data
 325:    )
@@ -2022,7 +2022,7 @@ File:RooFiStaking.sol#L325
 
 
 
-File:RooFiStaking.sol#L337
+File:GaiaStaking.sol#L337
 ```solidity
 336:    function recoverERC20(address _tokenAddress, uint256 _amount) public onlyOwner {
 ``` 
@@ -2052,21 +2052,21 @@ File:Raffle.sol#L19
 
 
 
-File:RooFiStaking.sol#L52
+File:GaiaStaking.sol#L52
 ```solidity
 51:    mapping(uint256 _tokenIds => bool) public isIndexed;
 ``` 
 
 
 
-File:RooFiStaking.sol#L55
+File:GaiaStaking.sol#L55
 ```solidity
 54:    mapping(address staker => Staker) public stakers;
 ``` 
 
 
 
-File:RooFiStaking.sol#L58
+File:GaiaStaking.sol#L58
 ```solidity
 57:    mapping(uint256 _tokenIds => StakingCondition) private stakingConditions;
 ``` 
